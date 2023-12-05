@@ -27,7 +27,7 @@ class HomeView extends StatelessWidget {
       '',
     ),
     Post(
-      "Mr. Tate",
+      "Terrence Cagliari",
       DateTime.now(),
       'Golf Course 4',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
@@ -82,6 +82,7 @@ class HomeView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
+            flex: 5,
             child: Padding(
               padding: const EdgeInsets.all(0),
               child: Column(
@@ -204,8 +205,6 @@ class HomeView extends StatelessWidget {
                                                     255, 255, 255, 255),
                                                 child: CircleAvatar(
                                                   radius: 20,
-                                                  backgroundImage: AssetImage(
-                                                      'assets/user_assets/profile3.jpeg'),
                                                 ),
                                               ),
                                             ),
@@ -290,7 +289,7 @@ class HomeView extends StatelessWidget {
                     child: Center(
                       child: SizedBox(
                         width: 346,
-                        height: 440,
+                        height: 465,
                         child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: postInfo.length,
@@ -316,7 +315,7 @@ class HomeView extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 24.0),
       child: Container(
         width: 400,
-        height: 392,
+        height: 422,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -335,50 +334,60 @@ class HomeView extends StatelessWidget {
             Row(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(left: 19, top: 17),
+                  padding: EdgeInsets.only(left: 15, top: 17),
                   child: CircleAvatar(
                     radius: 20,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 17, left: 20),
+                  padding: const EdgeInsets.only(top:20, left: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        post.name,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
-                        ),
-                      ),
-                      Text(
-                        "${DateFormat.Hm().format(post.published).toString()}m",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xFF898A8D),
-                          fontSize: 12,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                          letterSpacing: -0.24,
+                    children: [
+                      SizedBox(
+                        width: 150,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              post.name,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontFamily: 'Muli',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
+                            ),
+                            Text(
+                              "${DateFormat.Hm().format(post.published).toString()}m",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                color: Color(0xFF898A8D),
+                                fontSize: 12,
+                                fontFamily: 'Muli',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                                letterSpacing: -0.24,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 17, left: 70),
-                  child: IconButton(
-                    onPressed: () {
-                      // Logic icon button in Post
-                    },
-                    icon: Icon(CupertinoIcons.ellipsis_vertical),
-                  ),
+                SizedBox(
+                  width: 65,
+                ),
+                IconButton(
+                  padding: EdgeInsets.only(left: 0),
+                  onPressed: () {
+                    // Logic icon button in Post
+                  },
+                  icon: Icon(CupertinoIcons.ellipsis),
                 ),
               ],
             ),
@@ -386,7 +395,7 @@ class HomeView extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 0, top: 10),
               child: Container(
                 width: 278,
                 height: 148,
@@ -396,8 +405,8 @@ class HomeView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20))),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    'assets/user_assets/post1.jpg',
+                  child: Image.network(
+                    'https://www.imagensempng.com.br/wp-content/uploads/2021/08/Familia-Png.png',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -422,7 +431,7 @@ class HomeView extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10),
               child: SizedBox(
                 width: 300,
-                height: 40,
+                height: 55,
                 child: Text(
                   post.description,
                   style: TextStyle(
@@ -439,7 +448,7 @@ class HomeView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(top: 0),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Positioned(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -458,7 +467,7 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 0),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Positioned(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -477,15 +486,14 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 0),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Positioned(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         IconButton(
-                          onPressed: () {
-                          },
+                          onPressed: () {},
                           icon: Icon(CupertinoIcons.share),
                         ),
                         Padding(

@@ -12,4 +12,12 @@ class Post {
     this.description,
     this.photoUrl,
   );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'published': published,
+    'header': header,
+    'description': description,
+    'photoUrl': photoUrl,
+  };
 }
