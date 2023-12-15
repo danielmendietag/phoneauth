@@ -44,6 +44,9 @@ dependencies:
   animated_gradient: ^0.0.2
   carousel_slider: ^4.2.1
   country_picker: ^2.0.23
+  get: ^4.6.6
+  firebase_database: ^10.3.8
+  pinput: ^3.0.1
 
 dev_dependencies:
   flutter_test:
