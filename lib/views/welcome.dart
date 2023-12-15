@@ -2,8 +2,8 @@ import 'package:animated_gradient/animated_gradient.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:phoneauth/views/signin.dart';
-import 'package:phoneauth/views/signin_view.dart';
+// import 'package:phoneauth/views/signin.dart';
+// import 'package:phoneauth/views/signin_view.dart';
 import 'package:phoneauth/widgets/logo_main.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -117,7 +117,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     minimumSize: const Size(207, 60),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pushReplacementNamed('/home');
+                    Navigator.of(context).pushReplacementNamed('/signIn');
                   },
                   child: const Text(
                     'GET STARTED',
