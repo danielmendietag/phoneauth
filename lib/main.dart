@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:phoneauth/controllers/home_controller.dart';
 import 'package:phoneauth/services/auth_services.dart';
 import 'package:phoneauth/services/provider.dart';
 import 'package:phoneauth/views/home_view.dart';
+import 'package:phoneauth/views/profile.dart';
 import 'package:phoneauth/views/signin.dart';
 import 'package:phoneauth/views/welcome.dart';
 
@@ -39,18 +41,19 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return Provider(
       AuthServices(),
       FirebaseFirestore.instance,
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: HomeView(),
+        home: HomeController(),
         routes: <String, WidgetBuilder> {
-          '/home': (BuildContext context) => HomeController(),
+          '/homec' : (BuildContext context) => HomeController(),
+          '/home': (BuildContext context) => HomeView(),
           '/welcome': (BuildContext context) => WelcomePage(),
           '/signUp': (BuildContext context) => SignInPage(authFormType: AuthFormType.signUp),
           '/signIn': (BuildContext context) => SignInPage(authFormType: AuthFormType.signIn),
-          '/phone': (BuildContext context) => SignInPage(authFormType: AuthFormType.phone),
           '/reset': (BuildContext context) => SignInPage(authFormType: AuthFormType.reset),
           '/otp': (BuildContext context) => SignInPage(authFormType: AuthFormType.otp),
+          '/profile' : (BuildContext context) => ProfilePage(),
         },
       ),
     );
