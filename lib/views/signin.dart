@@ -2,7 +2,6 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
-
 import '../services/provider.dart';
 import '../widgets/logo_two.dart';
 
@@ -17,11 +16,11 @@ class SignInPage extends StatefulWidget {
 
   @override
   _SignInPageState createState() => _SignInPageState(
-      email: '',
+      email: 'daniel.mendieta@gmail.com',
       // replace with the actual email value
-      password: "password123",
+      password: "123456",
       // replace with the actual password value
-      name: "John Doe",
+      name: "",
       // replace with the actual name value
       phone: "+526505551212",
       // replace with the actual phone value
@@ -41,7 +40,6 @@ class _SignInPageState extends State<SignInPage> {
     required String otp,
   })  : _email = email,
         _password = password,
-        _name = name,
         _phone = phone,
         _otp = otp;
 
@@ -51,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   final formKey = GlobalKey<FormState>();
-  final String? _email, _password, _name, _phone, _otp;
+  final String? _email, _password, _phone, _otp;
 
   void switchFormState(String state) {
     formKey.currentState?.reset();
@@ -595,7 +593,43 @@ class _SignInPageState extends State<SignInPage> {
       // Display buttons in a column for signIn
       appButtons.add(
         Padding(
-          padding: const EdgeInsets.only(left: 50, top: 30),
+          padding: EdgeInsets.only(left: 0, top: 0),
+          child: Row(
+            children: <Widget>[
+              Text(
+                'Did you forget your password?',
+                style: TextStyle(
+                  color: Color(0xFF1E1E1E),
+                  fontSize: 14,
+                  fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  // from json to json to Firebase
+
+                  Navigator.of(context).pushReplacementNamed('/reset');
+                },
+                child: Text(
+                  'Reset Here',
+                  style: TextStyle(
+                    color: Color(0xFF6F6F6F),
+                    fontSize: 14,
+                    fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w400,
+                    height: 0,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+      appButtons.add(
+        Padding(
+          padding: const EdgeInsets.only(left: 50, bottom: 20, top: 10),
           child: Container(
             margin: const EdgeInsets.only(left: 0, right: 0),
             padding: const EdgeInsets.only(right: 30, left: 0),
@@ -625,40 +659,7 @@ class _SignInPageState extends State<SignInPage> {
           ),
         ),
       );
-      appButtons.add(
-        Padding(
-          padding: EdgeInsets.only(left: 0, top: 20),
-          child: Column(
-            children: <Widget>[
-              Text(
-                'Did you forget your password?',
-                style: TextStyle(
-                  color: Color(0xFF1E1E1E),
-                  fontSize: 14,
-                  fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w400,
-                  height: 0,
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/reset');
-                },
-                child: Text(
-                  'Reset Here',
-                  style: TextStyle(
-                    color: Color(0xFF6F6F6F),
-                    fontSize: 14,
-                    fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
+
       appButtons.add(
         Padding(
           padding: const EdgeInsets.only(left: 50),
