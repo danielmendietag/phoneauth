@@ -47,6 +47,8 @@ dependencies:
   get: ^4.6.6
   firebase_database: ^10.3.8
   pinput: ^3.0.1
+  flutter_svg: ^2.0.9
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +76,8 @@ flutter:
   assets:
     - assets/
     - assets/backButton1.png
+    - assets/info/info.json
+    - assets/add_circle.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -89,7 +93,6 @@ flutter:
      - family: Bungee
        fonts:
          - asset: assets/fonts/Bungee-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
