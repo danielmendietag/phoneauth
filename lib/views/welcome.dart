@@ -23,9 +23,6 @@ class _WelcomePageState extends State<WelcomePage> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text(
-          'Hello!',
-        ),
       ),
       body: AnimatedGradient(
         colors: const [
@@ -40,7 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                  height: 50,
+                  height: 20,
                 ),
                 LogoMainWidget(),
                 Text(
