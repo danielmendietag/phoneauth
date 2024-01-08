@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:phoneauth/views/aboutus.dart';
 import 'package:phoneauth/views/becomehost.dart';
 import 'package:phoneauth/views/home_view.dart';
+import 'package:phoneauth/views/messagecenter.dart';
 import 'package:phoneauth/views/whatsnew.dart';
 import 'package:phoneauth/widgets/logo_two.dart';
 
@@ -99,6 +100,23 @@ class _MainDrawerState extends State<MainDrawer> {
                 print(Get.currentRoute);
                 Get.back();
                 Get.to(() => WhatsNewPage());
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Message Center',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    fontFamily: 'Muli',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400),
+              ),
+              tileColor:
+              Get.currentRoute == '/messagecenter' ? Colors.grey[300] : null,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => MessageCenter());
               },
             ),
           ],
