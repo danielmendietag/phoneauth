@@ -5,7 +5,10 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:phoneauth/controllers/home_controller.dart';
 import 'package:phoneauth/services/auth_services.dart';
 import 'package:phoneauth/services/provider.dart';
+import 'package:phoneauth/views/edithost.dart';
+import 'package:phoneauth/views/editprofile.dart';
 import 'package:phoneauth/views/home_view.dart';
+import 'package:phoneauth/views/messagecenter.dart';
 import 'package:phoneauth/views/profile.dart';
 import 'package:phoneauth/views/signin.dart';
 import 'package:phoneauth/views/welcome.dart';
@@ -54,6 +57,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           '/reset': (BuildContext context) => SignInPage(authFormType: AuthFormType.reset),
           '/otp': (BuildContext context) => SignInPage(authFormType: AuthFormType.otp),
           '/profile' : (BuildContext context) => ProfilePage(),
+          '/messagecenter' : (BuildContext context) => MessageCenter(),
+          '/editprofile' : (BuildContext context) => ProfileEditing(),
+          '/edithost' : (BuildContext context) => EditHost(),
         },
       ),
     );
